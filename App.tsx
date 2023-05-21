@@ -2,11 +2,11 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './screens/Home';
-import Screen2 from './screens/Screen2';
+import DoorScreen from './screens/DoorScreen';
 
 export type RootStackParamList = {
   Home: undefined;
-  Screen2: undefined;
+  DoorScreen: {text: string; image: string};
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -21,8 +21,8 @@ function App(): JSX.Element {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Screen2"
-          component={Screen2}
+          name="DoorScreen"
+          component={DoorScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
