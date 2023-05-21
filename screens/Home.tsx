@@ -8,9 +8,9 @@ export type NavigationProp = NativeStackNavigationProp<
   'Home'
 >;
 const pages = [
-  {text: 'You Win', image: 'https://i.imgur.com/hEeDAE8.png/'},
-  {text: 'You Lose', image: 'https://i.imgur.com/JWdMrMu.jpeg/'},
-  {text: 'Give Me A Kiss', image: 'https://i.imgur.com/eWMWeyu.jpeg/'},
+  {door: 1, text: 'You Win', image: 'https://i.imgur.com/hEeDAE8.png/'},
+  {door: 2, text: 'You Lose', image: 'https://i.imgur.com/JWdMrMu.jpeg/'},
+  {door: 3, text: 'Give Me A Kiss', image: 'https://i.imgur.com/eWMWeyu.jpeg/'},
 ]
 const Home = () => {
   const navigation = useNavigation<NavigationProp>();
@@ -27,9 +27,10 @@ const Home = () => {
           {pages.map(page => (
             <Pressable
               className={'m-2 border border-black'} 
-              key={page.text}
+              key={page.door}
               onPress={() =>
                 navigation.navigate('DoorScreen', {
+                  door: page.door,
                   text: page.text,
                   image: page.image,
                 })

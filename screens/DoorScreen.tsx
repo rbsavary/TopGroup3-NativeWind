@@ -21,12 +21,13 @@ type Props = {
 
 const DoorScreen = ({route}: Props) => {
   const navigation = useNavigation<DoorScreenNavigationProp>();
-  const {text, image} = route.params;
+  const {door, text, image} = route.params;
   return (
     <SafeAreaView className={"bg-lightGrey"}>
       <View
         className={"min-h-screen justify-center align-middle mx-auto min-w-screen"}>
-        <Text className="text-center font-bold text-3xl">{text}!</Text>
+        <Text className={"text-center font-bold text-5xl"}>Door {door}</Text>
+        <Text className={"text-center font-bold text-3xl"}>{text}!</Text>
         <Image 
           source={{uri: image}}
           style={{ width: 350, height: 500 }}

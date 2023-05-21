@@ -6,7 +6,7 @@ import DoorScreen from './screens/DoorScreen';
 
 export type RootStackParamList = {
   Home: undefined;
-  DoorScreen: {text: string; image: string};
+  DoorScreen: {door: number, text: string; image: string};
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
